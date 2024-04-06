@@ -17,7 +17,10 @@ Algorithm(name: "InsertionSort", complexity: "O(n^2)", description: "Insertion S
 
 Algorithm(name: "SelectionSort", complexity: "O(n^2)", description: "Selection Sort works by iteratively selecting the smallest (or largest) element from the unsorted part of the array and moving it to the beginning of the unsorted portion. This process effectively partitions the array into a sorted and an unsorted section. The algorithm repeats this process until the entire array is sorted, with each iteration adding one element to the sorted section."),
 
-Algorithm(name: "HeapSort", complexity: "O(nlogn)", description: "Heap Sort works by first building a max-heap from the input array. This max-heap ensures that the maximum element is at the root. Then, it repeatedly extracts the maximum element from the heap, which is at the root, and swaps it with the last element of the heap. After each extraction, the heap is adjusted to maintain its properties. This process continues until all elements are sorted in ascending order. The result is a sorted array.")
+Algorithm(name: "HeapSort", complexity: "O(nlogn)", description: "Heap Sort works by first building a max-heap from the input array. This max-heap ensures that the maximum element is at the root. Then, it repeatedly extracts the maximum element from the heap, which is at the root, and swaps it with the last element of the heap. After each extraction, the heap is adjusted to maintain its properties. This process continues until all elements are sorted in ascending order. The result is a sorted array."),
+
+Algorithm(name: "MergeSort", complexity: "O(nlogn)", description: "Merge sort works by dividing the unsorted array into two equal halves. It recursively sorts each half by dividing them further until each sub-array contains only one element, which is inherently sorted. Then, it merges these sorted sub-arrays back together by comparing elements from each sub-array and placing them in the correct order. This merging process continues until the entire array is sorted.")
 
 ]
+
 

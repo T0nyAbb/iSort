@@ -11,8 +11,6 @@ import SwiftUI
 class AlgorithmDetailViewController: UIViewController {
     
     var algorithm: Algorithm?
-
-    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var complexityLabel: UILabel!
     
@@ -26,10 +24,11 @@ class AlgorithmDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         if let algo = algorithm {
-            nameLabel.text = algo.name
             complexityLabel.text = algo.complexity
             descriptionLabel.text = algo.description ?? "No description"
+            self.navigationItem.title = algo.name
         }
+        
     }
     
     required init?(coder: NSCoder, algorithm: Algorithm?) {

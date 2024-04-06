@@ -25,7 +25,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Algorithm name and complexity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxA-kq-hsy">
-                                            <rect key="frame" x="40.000000000000014" y="11.666666666666666" width="240.33333333333337" height="20.333333333333336"/>
+                                            <rect key="frame" x="39.999999999999986" y="11.666666666666666" width="240.66666666666663" height="20.333333333333336"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" none="YES"/>
                                             </accessibility>
@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="-672.51908396946567" y="-27.464788732394368"/>
         </scene>
-        <!--Algorithm Detail View Controller-->
+        <!--AlgorithmName-->
         <scene sceneID="Ytt-sz-aTN">
             <objects>
                 <viewController id="eyd-5T-Kqa" customClass="AlgorithmDetailViewController" customModule="iSort" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,72 +64,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-Bd-LZQ">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-Bd-LZQ">
                                 <rect key="frame" x="16" y="155" width="361" height="240"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dTA-Bd-LZQ" secondAttribute="height" multiplier="361:240" id="Fry-y3-Q96"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="uw3-tk-Inm" kind="embed" destinationCreationSelector="animatedAlgorithm:" id="VO7-nX-Zcj"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AlgorithmName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCq-Mp-sg2">
-                                <rect key="frame" x="104" y="411" width="184" height="28.666666666666686"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time complexity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-fs-1IK">
-                                <rect key="frame" x="16" y="458" width="140" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time complexity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-fs-1IK">
+                                <rect key="frame" x="16" y="416" width="140" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J31-xP-WMs">
-                                <rect key="frame" x="16" y="523" width="361" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J31-xP-WMs">
+                                <rect key="frame" x="16" y="464" width="361" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="227" id="0gb-wX-DAj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjL-zH-WCg">
-                                <rect key="frame" x="169" y="750" width="56" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Sort"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgp-mh-tHp">
-                                <rect key="frame" x="16" y="699" width="346" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgp-mh-tHp">
+                                <rect key="frame" x="16" y="699" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVL-pr-25n">
-                                <rect key="frame" x="242" y="458" width="135" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J04-dA-qbN">
-                                <rect key="frame" x="169" y="750" width="56" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J04-dA-qbN">
+                                <rect key="frame" x="168.66666666666666" y="750.66666666666663" width="56" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sort"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="eyd-5T-Kqa" eventType="touchUpInside" id="ge9-xk-NS7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="complexity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVL-pr-25n">
+                                <rect key="frame" x="291.66666666666669" y="415" width="85.333333333333314" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XKv-b8-go1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bcN-fs-1IK" firstAttribute="top" secondItem="dTA-Bd-LZQ" secondAttribute="bottom" constant="21" id="F1a-sx-i3g"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="leading" secondItem="bcN-fs-1IK" secondAttribute="leading" id="Fob-bN-HsE"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="top" secondItem="QCX-8M-alH" secondAttribute="topMargin" id="Rn1-wF-GPY"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="centerX" secondItem="J04-dA-qbN" secondAttribute="centerX" id="ahH-W9-fRj"/>
+                            <constraint firstItem="Mgp-mh-tHp" firstAttribute="top" secondItem="J31-xP-WMs" secondAttribute="bottom" constant="8" id="c3m-Qy-ORQ"/>
+                            <constraint firstItem="XKv-b8-go1" firstAttribute="trailing" secondItem="eVL-pr-25n" secondAttribute="trailing" constant="16" id="d9X-1H-F7M"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="trailing" secondItem="QCX-8M-alH" secondAttribute="trailingMargin" id="dzu-Ac-FjQ"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="leading" secondItem="Mgp-mh-tHp" secondAttribute="leading" id="gnr-0M-pWJ"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="leading" secondItem="QCX-8M-alH" secondAttribute="leadingMargin" id="jHb-Tk-RX2"/>
+                            <constraint firstItem="XKv-b8-go1" firstAttribute="bottom" secondItem="J04-dA-qbN" secondAttribute="bottom" constant="33" id="jLa-P8-bEL"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="top" secondItem="XKv-b8-go1" secondAttribute="top" id="o4q-pw-tSo"/>
+                            <constraint firstItem="eVL-pr-25n" firstAttribute="top" secondItem="dTA-Bd-LZQ" secondAttribute="bottom" constant="20" id="qb6-pp-Saq"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="trailing" secondItem="J31-xP-WMs" secondAttribute="trailing" id="t3a-SW-m5N"/>
+                            <constraint firstItem="J31-xP-WMs" firstAttribute="top" secondItem="bcN-fs-1IK" secondAttribute="bottom" constant="27" id="y3l-uC-Jdr"/>
+                            <constraint firstItem="dTA-Bd-LZQ" firstAttribute="leading" secondItem="J31-xP-WMs" secondAttribute="leading" id="y5o-Yv-f7e"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Vy5-YC-iU4"/>
+                    <navigationItem key="navigationItem" title="AlgorithmName" id="Vy5-YC-iU4"/>
                     <connections>
                         <outlet property="complexityLabel" destination="eVL-pr-25n" id="zDI-s6-wHX"/>
                         <outlet property="descriptionLabel" destination="J31-xP-WMs" id="BC0-gh-hxr"/>
-                        <outlet property="nameLabel" destination="dCq-Mp-sg2" id="ZiF-8C-55h"/>
                         <outlet property="sortingTimeLabel" destination="Mgp-mh-tHp" id="dZl-ei-INm"/>
                     </connections>
                 </viewController>

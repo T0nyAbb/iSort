@@ -41,20 +41,17 @@ extension Array where Element: Comparable {
 }
 
 extension Array where Element: Comparable {
-    @inlinable
     mutating func quickSort() {
         quickSortHelper(start: 0, end: count - 1)
     }
-    @inlinable
-    internal mutating func quickSortHelper(start: Int, end: Int) {
+    private mutating func quickSortHelper(start: Int, end: Int) {
         if start < end {
             let pivotIndex = partition(start: start, end: end)
             quickSortHelper(start: start, end: pivotIndex - 1)
             quickSortHelper(start: pivotIndex + 1, end: end)
         }
     }
-    @inlinable
-    internal mutating func partition(start: Int, end: Int) -> Int {
+    private mutating func partition(start: Int, end: Int) -> Int {
         let pivot = self[end]
         var i = start
         
@@ -70,12 +67,10 @@ extension Array where Element: Comparable {
 }
 
 extension Array where Element: Comparable {
-    @inlinable
     mutating func optimizedQuickSort() {
         quickSortHelper(low: 0, high: count - 1)
     }
-    @inlinable
-    internal mutating func quickSortHelper(low: Int, high: Int) {
+    private mutating func quickSortHelper(low: Int, high: Int) {
         if low < high {
             let pivotIndex = partition(low: low, high: high)
             quickSortHelper(low: low, high: pivotIndex - 1)
@@ -83,8 +78,7 @@ extension Array where Element: Comparable {
         }
     }
     
-    @inlinable
-    internal mutating func partition(low: Int, high: Int) -> Int {
+    private mutating func partition(low: Int, high: Int) -> Int {
         let pivotIndex = Int.random(in: low...high)
         swapAt(pivotIndex, high)
         var i = low
@@ -124,7 +118,6 @@ extension Array where Element: Comparable {
 
 
 extension Array where Element: Comparable {
-    @inlinable
     mutating func heapSort() {
         // Build max heap
         buildMaxHeap()
@@ -137,16 +130,14 @@ extension Array where Element: Comparable {
             end -= 1
         }
     }
-    @inlinable
-    internal mutating func buildMaxHeap() {
+    private mutating func buildMaxHeap() {
         var start = (count - 2) / 2 // Parent of the last node
         while start >= 0 {
             heapify(from: start, to: count)
             start -= 1
         }
     }
-    @inlinable
-    internal mutating func heapify(from index: Int, to endIndex: Int) {
+    private mutating func heapify(from index: Int, to endIndex: Int) {
         var root = index
         while root * 2 + 1 < endIndex {
             var child = root * 2 + 1
@@ -186,6 +177,46 @@ extension Array where Element: Comparable {
     }
 }
 
+extension Array where Element: Comparable {
+    mutating func mergeSort() {
+        guard count > 1 else { return }
+        
+        let midIndex = count / 2
+        var leftArray = Array(self[..<midIndex])
+        var rightArray = Array(self[midIndex...])
+        
+        leftArray.mergeSort()
+        rightArray.mergeSort()
+        
+        self = merge(leftArray, rightArray)
+    }
+    
+    private func merge(_ left: [Element], _ right: [Element]) -> [Element] {
+        var mergedArray = [Element]()
+        var leftIndex = 0
+        var rightIndex = 0
+        
+        while leftIndex < left.count && rightIndex < right.count {
+            if left[leftIndex] < right[rightIndex] {
+                mergedArray.append(left[leftIndex])
+                leftIndex += 1
+            } else {
+                mergedArray.append(right[rightIndex])
+                rightIndex += 1
+            }
+        }
+        
+        mergedArray.append(contentsOf: left[leftIndex...])
+        mergedArray.append(contentsOf: right[rightIndex...])
+        
+        return mergedArray
+    }
+}
+
+
+
+
+
 
 
 
@@ -210,7 +241,7 @@ func defaultSort() {
     
     
     print("Sorting array with default sort...")
-
+    
     let startSorting = CFAbsoluteTimeGetCurrent()
     
     
@@ -297,7 +328,7 @@ func quickSort(size: Int) async -> String {
     
     
     
-    myArray.quickSort()
+    myArray.optimizedQuickSort()
     
     let difference = CFAbsoluteTimeGetCurrent() - startSorting
     let result = "sorted \(size.formatted()) elements in  \(difference.formatted(.number.precision(.integerAndFractionLength(integer: 2, fraction: 2)))) seconds"
@@ -321,7 +352,7 @@ func insertionSort(size: Int) async -> String {
     let diff = CFAbsoluteTimeGetCurrent() - start
     print("Done\nTook \(diff.formatted(.number)) seconds")
     
-    print("Sorting array with optimized quick sort...")
+    print("Sorting array with insertion sort...")
     let startSorting = CFAbsoluteTimeGetCurrent()
     
     
@@ -351,7 +382,7 @@ func heapSort(size: Int) async -> String {
     let diff = CFAbsoluteTimeGetCurrent() - start
     print("Done\nTook \(diff.formatted(.number)) seconds")
     
-    print("Sorting array with optimized quick sort...")
+    print("Sorting array with heap sort...")
     let startSorting = CFAbsoluteTimeGetCurrent()
     
     
@@ -371,7 +402,7 @@ func selectionSort(size: Int) async -> String {
     let start = CFAbsoluteTimeGetCurrent()
     // run your work
     
-    print("\n----------HEAP SORT------------\n")
+    print("\n----------SELECTION SORT------------\n")
     
     print("Generating array with \(size) elements...")
     var myArray = (0..<size).map { _ in
@@ -381,12 +412,42 @@ func selectionSort(size: Int) async -> String {
     let diff = CFAbsoluteTimeGetCurrent() - start
     print("Done\nTook \(diff.formatted(.number)) seconds")
     
-    print("Sorting array with optimized quick sort...")
+    print("Sorting array with selection sort...")
     let startSorting = CFAbsoluteTimeGetCurrent()
     
     
     
     myArray.selectionSort()
+    
+    let difference = CFAbsoluteTimeGetCurrent() - startSorting
+    let result = "sorted \(size.formatted()) elements in  \(difference.formatted(.number.precision(.integerAndFractionLength(integer: 2, fraction: 2)))) seconds"
+    print(result)
+    print("\n-----------------------------------\n")
+    return result
+    
+}
+
+func mergeSort(size: Int) async -> String {
+    
+    let start = CFAbsoluteTimeGetCurrent()
+    // run your work
+    
+    print("\n----------MERGE SORT------------\n")
+    
+    print("Generating array with \(size) elements...")
+    var myArray = (0..<size).map { _ in
+        Int.random(in: 0..<1_000_000) // Generates a random integer between 0 and 1.000.000
+    }
+    
+    let diff = CFAbsoluteTimeGetCurrent() - start
+    print("Done\nTook \(diff.formatted(.number)) seconds")
+    
+    print("Sorting array with merge sort...")
+    let startSorting = CFAbsoluteTimeGetCurrent()
+    
+    
+    
+    myArray.mergeSort()
     
     let difference = CFAbsoluteTimeGetCurrent() - startSorting
     let result = "sorted \(size.formatted()) elements in  \(difference.formatted(.number.precision(.integerAndFractionLength(integer: 2, fraction: 2)))) seconds"
@@ -408,6 +469,8 @@ func selectAlgorithm(_ algo: String, size: Int) async -> String {
         return await heapSort(size: size)
     case "SelectionSort":
         return await selectionSort(size: size)
+    case "MergeSort":
+        return await mergeSort(size: size)
     default:
         return "Invalid selection"
     }

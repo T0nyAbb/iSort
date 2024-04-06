@@ -26,6 +26,7 @@
 		1D63F21F2BBE8D6C00E082AA /* InsertionSort.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1D63F21E2BBE8D6C00E082AA /* InsertionSort.gif */; };
 		1D63F2212BBE8EAD00E082AA /* SelectionSort.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1D63F2202BBE8EAD00E082AA /* SelectionSort.gif */; };
 		1D63F2232BBE9B8B00E082AA /* HeapSort.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1D63F2222BBE9B8B00E082AA /* HeapSort.gif */; };
+		1D63F22E2BC0D28300E082AA /* MergeSort.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1D63F22D2BC0D28300E082AA /* MergeSort.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		1D63F21E2BBE8D6C00E082AA /* InsertionSort.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = InsertionSort.gif; sourceTree = "<group>"; };
 		1D63F2202BBE8EAD00E082AA /* SelectionSort.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SelectionSort.gif; sourceTree = "<group>"; };
 		1D63F2222BBE9B8B00E082AA /* HeapSort.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HeapSort.gif; sourceTree = "<group>"; };
+		1D63F22D2BC0D28300E082AA /* MergeSort.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MergeSort.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				1D63F21A2BBD660300E082AA /* BubbleSort.gif */,
 				1D63F21E2BBE8D6C00E082AA /* InsertionSort.gif */,
 				1D63F2202BBE8EAD00E082AA /* SelectionSort.gif */,
+				1D63F22D2BC0D28300E082AA /* MergeSort.gif */,
 				1D63F2222BBE9B8B00E082AA /* HeapSort.gif */,
 				1D63F21C2BBD6B5500E082AA /* QuickSort.gif */,
 				1D63F2152BBD5EFF00E082AA /* View */,
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D63F1FB2BBD39B400E082AA /* Assets.xcassets in Resources */,
+				1D63F22E2BC0D28300E082AA /* MergeSort.gif in Resources */,
 				1D63F1FE2BBD39B400E082AA /* Base in Resources */,
 				1D63F2212BBE8EAD00E082AA /* SelectionSort.gif in Resources */,
 				1D63F21F2BBE8D6C00E082AA /* InsertionSort.gif in Resources */,
